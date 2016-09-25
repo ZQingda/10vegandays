@@ -1,6 +1,6 @@
 # 10vegendays
 
-[Visit us here!](www.10vegendays.com)
+[Visit us here!](http://www.10vegendays.com)
 
 Gregorian calendar with lunar dates attached, holidays in both
 calendars are dynamically generated using Javascript, features
