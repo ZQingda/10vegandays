@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+  /*border: 1px solid red;*/
+}
+body {
+  /*background-color: hsl(154, 20%, 40%);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;*/
+  font-size: 14px;
+}
+.topContainer {
+  position: absolute;
+  /*height: calc(100vh - 6vw);
+  width: 94vw;
+  margin: 3%;
+  border-radius: 7px;
+  box-shadow: 0 0 45px 3px hsl(160, 30%, 1%);
+  overflow: hidden;*/
+  width: 100%;
+  min-height: 910px;
+  height: 100%;
+}
+/*.bg {
+  position: absolute;
+  top: -10vh;
+  left: -10vw;
+  height: 120vh;
+  width: 120vw;
+  background-image: url("../images/walkway.jpg");
+  background-size: 120vw, 120vh;
+  filter: blur(13px);
+}*/
+
+.side {
+  position: relative;
+  float: left;
+  width: 22%;
+  margin: 0;
+  height: 100%;
+  background-color: #BFA48B;
+  box-shadow: 0 0 14px 3px rgba(0,0,0,0.3);
+  z-index: 1;
+}
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: #262626;
+  color: white;
+  font-size: 3em;
+}
+header p {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  font-family: "Raleway", "Microsoft YaHei", sans-serif;
+  font-weight: 200;
+  transform: translateY(-50%);
+}
+header span {
+  font-weight: 700;
+}
+nav {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 1.4em;
+  font-weight: 300;
+}
+nav ul {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
+nav li {
+  float: left;
+  height: 100%;
+  width: 28.3333%;
+  margin: 0;
+  background: #262626;
+  transition: 0.3s;
+}
+nav a,
+nav div {
+  line-height: 50px;
+}
+nav li:last-of-type {
+  width: 15%;
+}
+nav li:hover {
+  background: linear-gradient(to bottom, #222222 0%, #222222 100%);
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+.sideInfo {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  width: 100%;
+  /*min-height: 600px;*/
+  height: 620px;
+  
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 100px;
+}
+.container {
+  float: right;
+  margin: 0;
+  width: 78%;
+  height: 100%;
+  /*background-color: rgba(188,208,188,1);*/
+  /*box-shadow: 0 0 6px 2px #333333 inset;*/
+  /*background-color: rgba(255,236,179 ,1);*/
+}
+
+
+.calendarBar {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: #689f38;
+  /*border: 1px solid blue;*/
+}
+.left, .right {
+  vertical-align: middle;
+  position: absolute;
+  display: table;
+  width: 20%;
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  /*border: 1px solid red;*/
+}
+.left {
+  left: 0;
+}
+.left:after {
+  content: '';
+  width: 20%;
+  height: 100%;
+
+}
+.right {
+  right: 0;
+}
+.monthBtn {
+  /*background-color: #f57c00;*/
+  /*box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.5);*/
+  height: 100%;
+  width: 100%;
+  /*border-radius: 80px 0 0 80px;*/
+  color: #EFEFEF;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.monthBtn:hover {
+  color: white;
+}
+.monthBtn:active {
+  /*background-color: #e65100;*/
+  /*box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);*/
+}
+.indicator {
+  position: absolute;
+  /*border: 1px solid red;*/
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 60%;
+  font-size: 2.5em;
+  font-family: 'Raleway', sans-serif;
+  /*font-weight: bold;*/
+  color: white;
+}
+main {
+  position: relative;
+  float: right;
+  width: 100%;
+  height: 830px;
+  background-color: #FEFEFF;
+}
+table {
+  padding: 0;
+}
+td {
+  box-sizing: border-box;
+  width: 14.29%;
+  vertical-align: middle;
+  text-align: center;
+  background-clip: padding-box;
+  font-family: 'Raleway', sans-serif;
+}
+.weekdaysWrapper {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #89B260;
+}
+.weekdays {
+  width: 95%;
+  margin-left: 2.5%;
+  height: 50px;
+  line-height: 50px;
+  border-collapse: collapse;
+}
+thead td {
+  font-size: 2em;
+  color: white;
+  /*border: 1px solid red;*/
+}
+.content {
+  /*border: 1px solid red;*/
+  width: 95%;
+  /*min-height: 600px;*/
+  height: 720px;
+  border: 1px solid #FEFEFF;
+  margin: 2.5% 2.5% 0 2.5%;
+  border-collapse: collapse;
+}
+tbody td {
+  position: relative;
+  height: 0px;
+  font-size: 1.3em;
+  transition: 0.08s;
+  margin: 0;
+  padding: 0;
+}
+.active {
+  border: 1px solid #DDDDDD;
+}
+.active:hover {
+  background-color: #EFEFEF;
+}
+.vegen {
+  background-color: #f1f8e9;
+}
+.vegen:hover {
+  background-color: #dcedc8;
+}
+.today .greg,
+.today .lune {
+  /*background-color: #e0e0e0;*/
+  color: white;
+  background-color: #89B260;
+  /*border: 1px solid blue;*/
+}
+
+.info {
+  position: absolute;
+  text-align: right;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  height: 68px;
+  width: 100%;
+  font-family: 'Raleway', 宋体, 'SimSun', sans-serif;
+  font-size: 0.8em;
+  padding: 5px;
+  text-overflow: ellipsis;
+  /*border: 1px solid green;*/
+
+  /*background-color: white;*/
+}
+.greg,
+.lune {
+  position: absolute;
+  top: 0;
+  padding: 3px 8px;
+  height: 32px;
+  min-height: 25px;
+  /*border: 1px solid blue;*/
+}
+.greg {
+  width: 40%;
+  text-align: left;
+  left: 0;
+  font-size: 1.4em;
+}
+.lune {
+  width: 60%;
+  text-align: right;
+  right: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .side {
+    height: 50px;
+    width: 100%;
+  }
+  header {
+    font-size: 2.5em;
+    height: 50px;
+    width: 33%;
+    left: 0;
+  }
+  header p {
+    top: 45%;
+  }
+  nav {
+    width: 67%;
+    top: 0;
+    right: 0;
+    border-style: none;
+  }
+  .container {
+    width: 100%;
+  }
+
+  .sideInfo {
+    position: absolute;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  body {
+    font-size: 12px;
+  }
+  .content {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 10px;
+  }
+  .side {
+    height: 60px;
+  }
+  header,
+  nav {
+    height: 30px;
+    width: 100%;
+  }
+  nav {
+    top: 30px;
+  }
+  nav div,
+  nav a {
+    line-height: 30px;
+  }
+  .greg {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 0;
+    padding-left: 5px;
+  }
+  .lune {
+    padding: 0;
+  }
+  .info {
+    font-size: 1em;
+  }
+}
+
