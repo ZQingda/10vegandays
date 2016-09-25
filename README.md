@@ -1,0 +1,10 @@
+# 10vegendays
+
+Visit at 10vegendays.com
+
+Gregorian calendar with lunar dates attached, holidays in both
+calendars are dynamically generated using Javascript, features
+display of the 10 fasting days per lunar month commonly adherred
+to by Chinese Mahayana Buddhists. 
+
+The site is still a work in progress!
