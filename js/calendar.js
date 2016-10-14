@@ -41,11 +41,14 @@ var lunarCalendar = {
     [new lunarMonth(10,14,17,30), new lunarMonth(11,1,14,30)]
   ]
 };
-var twentyNine = [1,8,14,15,18,23,24,27,28,29];
-var thirty = [1,8,14,15,18,23,24,28,29,30];
-// veganDays.january = function() {
-//
-// }
+var twentyNine = {
+  "tenVeganDays" : [1,8,14,15,18,23,24,27,28,29],
+  "sixVeganDays" : [8,14,15,23,28,29]
+};
+var thirty = {
+  "tenVeganDays" : [1,8,14,15,18,23,24,28,29,30],
+  "sixVeganDays" : [8,14,15,23,29,30]
+};
 
 var easter = {
   2014: {month: 3, date: 20},

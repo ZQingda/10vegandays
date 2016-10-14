@@ -16,10 +16,12 @@ function daysIn(month, year) {
 var daysInMonth;
 
 function fillTable(tableID) {
+  var tableBodyCur = document.getElementById('tableWrap');
   var tableCur = document.querySelectorAll('tbody td');
   var gregCur = document.querySelectorAll('.greg');
   var luneCur = document.querySelectorAll('.lune');
   var infoCur = document.querySelectorAll('.info');
+  var nodesToWipe = document.querySelectorAll('.sixNode, .tenNode');
 
   var firstOfMonth = new Date(setYear, setMonth, 1);
   var firstDay = firstOfMonth.getDay();
@@ -31,7 +33,6 @@ function fillTable(tableID) {
   // alert(lunarMonth[0].month - 1);
   var toggle = true;
 
-  // var holidayCount = 0;
 
 
   var dateCount = 0;
@@ -41,6 +42,12 @@ function fillTable(tableID) {
   var monthNumLunar;
   var dateNumLunar;
   var monthLength;
+
+  // tableBodyCur.style.opacity = 0;
+
+  for (var i = 0; i < nodesToWipe.length; i++) {
+    nodesToWipe[i].parentNode.removeChild(nodesToWipe[i]);
+  }
 
 
   for (var count = 0; count < 42; count++) {
@@ -76,12 +83,24 @@ function fillTable(tableID) {
     }
 
 
-    function addVegenText(daySet) {
-      if (daySet.indexOf(dateNumLunar) > -1) {
-        infoText += "十斋日";
+    function addVegenText(veganDaySet) {
+      var tenCheck = veganDaySet["tenVeganDays"].indexOf(dateNumLunar);
+      var sixCheck = veganDaySet["sixVeganDays"].indexOf(dateNumLunar);
+      if (tenCheck > -1) {
+        var tenNode = document.createElement("div");
+        tenNode.classList.add("tenNode");
+        tenNode.innerHTML = "vegan (10)";
         tableCur[count].classList.add("vegen");
+        tableCur[count].appendChild(tenNode);
       }
-      else {
+      if (sixCheck > -1) {
+        var sixNode = document.createElement("div");
+        sixNode.classList.add("sixNode");
+        sixNode.innerHTML = "vegan (6)";
+        tableCur[count].classList.add("vegen");
+        tableCur[count].appendChild(sixNode);
+      }
+      if (tenCheck == -1 && sixCheck == -1) {
         tableCur[count].classList.remove("vegen");
       }
     }
@@ -130,9 +149,15 @@ function fillTable(tableID) {
 
     infoText = "";
   }
+
+  // window.setTimeout(opacityWait, 2500);
 }
 
-var prevClick = function() {
+function opacityWait() {
+  tableBodyCur.style.opacity = 1;
+}
+
+function prevClick() {
   if (setMonth === 0) {
     setMonth = 11;
     setYear--;
@@ -146,7 +171,7 @@ var prevClick = function() {
   fillTable();
 }
 
-var nextClick = function() {
+function nextClick() {
   if (setMonth === 11) {
     setMonth = 0;
     setYear++;

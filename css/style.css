@@ -21,31 +21,21 @@ body {
   min-height: 910px;
   height: 100%;
 }
-/*.bg {
-  position: absolute;
-  top: -10vh;
-  left: -10vw;
-  height: 120vh;
-  width: 120vw;
-  background-image: url("../images/walkway.jpg");
-  background-size: 120vw, 120vh;
-  filter: blur(13px);
-}*/
-
 .side {
   position: relative;
   float: left;
-  width: 22%;
+  width: 100%;
   margin: 0;
-  height: 100%;
-  background-color: #BFA48B;
+  height: 80px;
+  background-color: #262626;
   box-shadow: 0 0 14px 3px rgba(0,0,0,0.3);
   z-index: 1;
 }
 header {
   position: absolute;
   top: 0;
-  width: 100%;
+  left: 0;
+  width: 33%;
   height: 80px;
   background: #262626;
   color: white;
@@ -66,8 +56,10 @@ header span {
 nav {
   position: absolute;
   top: 80px;
-  width: 100%;
-  height: 50px;
+  width: 67%;
+  height: 80px;
+  top: 0;
+  right: 0;
   font-family: "Roboto", sans-serif;
   color: white;
   font-size: 1.4em;
@@ -85,30 +77,21 @@ nav li {
   width: 28.3333%;
   margin: 0;
   background: #262626;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 nav a,
 nav div {
-  line-height: 50px;
+  line-height: 80px;
 }
 nav li:last-of-type {
   width: 15%;
 }
 nav li:hover {
-  background: linear-gradient(to bottom, #222222 0%, #222222 100%);
+  background: #181818;
 }
 nav a {
   color: white;
   text-decoration: none;
-}
-.sideInfo {
-  position: absolute;
-  top: 130px;
-  left: 0;
-  width: 100%;
-  /*min-height: 600px;*/
-  height: 620px;
-  
 }
 
 footer {
@@ -120,7 +103,7 @@ footer {
 .container {
   float: right;
   margin: 0;
-  width: 78%;
+  width: 100%;
   height: 100%;
   /*background-color: rgba(188,208,188,1);*/
   /*box-shadow: 0 0 6px 2px #333333 inset;*/
@@ -202,6 +185,9 @@ main {
 }
 table {
   padding: 0;
+}
+#tableWrap {
+  transition: 0.5s;
 }
 td {
   box-sizing: border-box;
@@ -288,40 +274,66 @@ tbody td {
   top: 0;
   padding: 3px 8px;
   height: 32px;
-  min-height: 25px;
   /*border: 1px solid blue;*/
 }
 .greg {
   width: 40%;
   text-align: left;
   left: 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 .lune {
   width: 60%;
   text-align: right;
   right: 0;
 }
+.sixNode,
+.tenNode {
+  position: absolute;
+  height: 32px;
+  top: 32px;
+  width: 50%;
+  font-size: 1.0em;
+  text-align: center;
+}
+.sixNode {
+  left: 0;
+}
+.tenNode {
+  right: 0;
+}
+
+.dateInfoPopupContainer {
+  /*display: none;*/
+  position: absolute;
+  width: 34%;
+  height: 400px;
+  top: 300px;
+  left: 33%;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: green;
+}
 
 @media screen and (max-width: 1400px) {
   .side {
     height: 50px;
-    width: 100%;
   }
   header {
     font-size: 2.5em;
     height: 50px;
-    width: 33%;
-    left: 0;
   }
   header p {
     top: 45%;
   }
   nav {
     width: 67%;
-    top: 0;
-    right: 0;
-    border-style: none;
+    height: 50px;
+  }
+  nav div,
+  nav a {
+    line-height: 50px;
   }
   .container {
     width: 100%;
@@ -361,14 +373,30 @@ tbody td {
   nav a {
     line-height: 30px;
   }
+  .greg,
+  .lune,
+  .tenNode,
+  .sixNode {
+    width: 100%;
+    text-align: center;
+  }
   .greg {
-    font-size: 1.2em;
+    height: 18px;
     font-weight: 500;
     padding: 0;
-    padding-left: 5px;
+    padding-left: 2px;
   }
   .lune {
+    top: 18px;
+    height: 18px;
     padding: 0;
+  }
+  .sixNode {
+    top: 68px;
+    content: "V(6)";
+  }
+  .tenNode {
+    content: "V(10)";
   }
   .info {
     font-size: 1em;
