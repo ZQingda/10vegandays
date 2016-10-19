@@ -305,7 +305,7 @@ tbody td {
 }
 
 .dateInfoPopupContainer {
-  /*display: none;*/
+  display: none;
   position: absolute;
   width: 34%;
   height: 400px;
